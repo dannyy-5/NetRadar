@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRYSTAL COGNITIVE CORE v8.0</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Matrix Particle Layer -->
+    <canvas id="matrixBg"></canvas>
+    
+    <div class="wrapper">
+        <div class="hud-hdr">
+            <div style="font-weight:bold; letter-spacing:2px;">⚡ VIRTUAL CRYSTAL SCAN MATRIX</div>
+            <div id="globalClock">SYS_TIME: --:--:--</div>
+        </div>
+        
+        <div class="grid">
+            <!-- PANEL 1 -->
+            <div class="bubble-panel">
+                <div class="panel-hdr"><span>SWEEP ENGINE</span><span id="statusTxt">IDLE</span></div>
+                <div class="ctrl-grp"><label>DOMAIN SUBNET:</label><input id="netIn" type="text" class="bubble-input" value="192.168.1"></div>
+                <div style="display:flex; gap:6px;">
+                    <div class="ctrl-grp" style="flex:1;"><label>VELOCITY RPM:</label><input id="rpmIn" type="number" class="bubble-input" value="15"></div>
+                    <div class="ctrl-grp" style="flex:1;"><label>POLL DELAY:</label><input id="delayIn" type="number" class="bubble-input" value="60"></div>
+                </div>
+                <div class="btn-matrix">
+                    <button id="startB" class="bubble-btn" onclick="startScan()">START</button>
+                    <button id="pauseB" class="bubble-btn" onclick="pauseScan()" disabled>PAUSE</button>
+                    <button id="endB" class="bubble-btn" onclick="endScan()" disabled>END</button>
+                </div>
+                <div style="margin-top:6px;" class="panel-hdr"><span>TERMINAL CORE FEED</span></div>
+                <div id="kernelOutput" class="term-box">[READY] Crystal workspace bound. Standing by for range metrics ignition layer...</div>
+            </div>
+            
+            <!-- PANEL 2 -->
+            <div class="bubble-panel">
+                <div class="panel-hdr"><span>COGNITIVE RADAR RANGE</span><span id="radarAngTxt">0°</span></div>
+                <canvas id="radarCanvas"></canvas>
+            </div>
+            
+            <!-- PANEL 3 -->
+            <div class="bubble-panel">
+                <div class="panel-hdr"><span>TELEMETRY METRICS</span><span>FLOW_IN</span></div>
+                <div class="stream-box">
+                    <div class="metric-row"><span>PROMISCUOUS SOCKET:</span><span class="metric-val">wlan0_promisc</span></div>
+                    <div class="metric-row"><span>SUBNET RANGE:</span><span id="telNet" class="metric-val">192.168.1.0/24</span></div>
+                    <div class="metric-row"><span>REGISTRY MATRIX SIZE:</span><span id="nodeCount" class="metric-val">0 ENTRIES</span></div>
+                    <div style="color:#ffffff; margin-top:6px; border-bottom:1px solid rgba(255,255,255,0.15); font-weight:bold; font-size:9px;">REALTIME HEX STREAM:</div>
+                    <div id="hexStream" style="font-size:10px; opacity:0.7; margin-top:4px; white-space:pre-wrap;">Pipeline standing by...</div>
+                </div>
+            </div>
+            
+            <!-- PANEL 4 -->
+            <div class="bubble-panel">
+                <div class="panel-hdr"><span>HARDWARE PROFILES</span><span>STATION_ID</span></div>
+                <div id="profileBox" class="stream-box"><div style="color:rgba(255,255,255,0.3); font-style:italic;">Run sequence to log host variables...</div></div>
+            </div>
+            
+            <!-- PANEL 5 -->
+            <div class="bubble-panel">
+                <div class="panel-hdr"><span>TOPOLOGY GRAPH WEB</span><span>LINKAGES</span></div>
+                <canvas id="webCanvas"></canvas>
+            </div>
+            
+            <!-- PANEL 6 -->
+            <div class="bubble-panel">
+                <div class="panel-hdr"><span>BUFFER REGISTER MEMORY LOG</span></div>
+                <div id="memStream" class="term-box" style="border:none; background:transparent; color:rgba(255,255,255,0.35); padding:0; overflow:hidden;"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

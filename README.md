@@ -1,1 +1,1 @@
-> Open this page at [bit.ly/49RsEx3](https://bit.ly/49RsEx3)
+> Open this page at [bit.ly/dannyy-1](https://bit.ly/dannyy-1)
